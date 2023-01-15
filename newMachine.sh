@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 cd "$(dirname $0)"
 
@@ -11,6 +11,7 @@ sudo apt install wget
 sudo apt install make
 sudo apt install apt-utils
 sudo apt install curl
+sudo apt install libx11-xcb1 
 
 # docker
 curl -fsSL https://get.docker.com -o get-docker.sh
