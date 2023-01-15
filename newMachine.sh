@@ -14,7 +14,7 @@ sudo apt install curl
 sudo apt install libx11-xcb1 
 
 # docker
-curl -fsSL https://get.docker.com -o get-docker.sh
+wget https://get.docker.com --output-document=get-docker.sh
 sudo sh get-docker.sh
 rm get-docker.sh
 
@@ -24,7 +24,7 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh --out
 rm -r  ~/miniconda3
 bash Miniconda3-latest-Linux-x86_64.sh
 rm Miniconda3-latest-Linux-x86_64.sh
-. ~/.bashrc
+source ~/.bashrc
 conda config --set auto_activate_base false
 conda update conda
 echo $(conda --version)
