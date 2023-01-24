@@ -2,32 +2,31 @@
 
 cd "$(dirname $0)"
 
-sudo apt update
-sudo apt upgrade
-sudo apt install build-essential
-sudo apt install git
-sudo apt install manpages-dev
-sudo apt install wget
-sudo apt install make
-sudo apt install apt-utils
-sudo apt install curl
-sudo apt install libx11-xcb1 
+apt update
+apt upgrade
+apt install apt-utils
+apt install build-essential
+apt install coreutils
+apt install git
+apt install manpages-dev
+apt install wget
+apt install make
+
+
+# VS Code
+wget https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 -O - | apt install - 
 
 # docker
-wget https://get.docker.com --output-document=get-docker.sh
-sudo sh get-docker.sh
-rm get-docker.sh
+wget https://get.docker.com -O - | sh -
 
+# gcloud
+snap remove google-cloud-sdk
+snap install google-cloud-cli --classic
+gcloud init
 
-# conda
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh --output-document=Miniconda3-latest-Linux-x86_64.sh
-rm -r  ~/miniconda3
-bash Miniconda3-latest-Linux-x86_64.sh
-rm Miniconda3-latest-Linux-x86_64.sh
+# micromamba
+wget micro.mamba.pm/install.sh -O - | bash -
 source ~/.bashrc
-conda config --set auto_activate_base false
-conda update conda
-echo $(conda --version)
 
 # ssh:
 ssh-keygen
