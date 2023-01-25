@@ -1,5 +1,14 @@
 #!/bin/bash
 
+if [ -z "$PS1" ]; then
+    echo "This script is required to be ran interactivly via bash -i newMachine.sh"
+    exit 1
+fi
+if [ -z "$BASH_VERSION" ]; then
+    echo "This script is required to be ran with the bash shell via bash -i newMachine.sh"
+    exit 1
+fi
+
 apt update
 apt upgrade
 apt install apt-utils
