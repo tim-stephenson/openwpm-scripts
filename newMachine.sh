@@ -1,11 +1,11 @@
 #!/bin/bash
 
 if [ -z "$BASH_VERSION" ]; then
-    echo "This script is required to be ran with the bash shell via bash -i newMachine.sh"
+    echo "This script is required to be ran with the bash shell via bash -i SCRIPT"
     exit 1
 fi
 if [ -z "$PS1" ]; then
-    echo "This script is required to be ran interactivly via bash -i newMachine.sh"
+    echo "This script is required to be ran interactivly via bash -i SCRIPT"
     exit 1
 fi
 
@@ -50,7 +50,7 @@ mkdir ~/OpenWPM
 cd ~/OpenWPM
 git clone git@github.com:tim-stephenson/OpenWPM-Data-Analytics.git
 cd ~/OpenWPM/OpenWPM-Data-Analytics
-bash install.sh
+bash -i install.sh
 
 cd ~/OpenWPM
 git clone git@gitlab.com:wesleyancs-plp/openwpm-mods.git --branch timothy
