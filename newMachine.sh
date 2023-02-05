@@ -18,6 +18,7 @@ apt install coreutils
 apt install git
 apt install manpages-dev
 apt install wget
+apt install curl
 apt install make
 
 
