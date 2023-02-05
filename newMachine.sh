@@ -9,6 +9,16 @@ if [ -z "$PS1" ]; then
     exit 1
 fi
 
+OS_ID="$(awk -F= '/^ID=/{print $2}' /etc/os-release)"
+if [ OS_ID -eq "ubuntu" ]; then
+    echo "user is using ubuntu"
+elif [ OS_ID -eq "debian" ]; then
+    echo "user is using debian"
+else
+    echo "not supported linux distribution"
+    exit 1
+fi
+
 
 apt update
 apt upgrade
