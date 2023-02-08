@@ -10,12 +10,12 @@ if [ -z "$PS1" ]; then
 fi
 
 OS_ID="$(awk -F= '/^ID=/{print $2}' /etc/os-release)"
-if [ OS_ID -eq "ubuntu" ]; then
+if [ $OS_ID = "ubuntu" ]; then
     echo "user is using ubuntu"
-elif [ OS_ID -eq "debian" ]; then
+elif [ $OS_ID = "debian" ]; then
     echo "user is using debian"
 else
-    echo "not supported linux distribution"
+    echo "not supported linux distribution : $OS_ID"
     exit 1
 fi
 
